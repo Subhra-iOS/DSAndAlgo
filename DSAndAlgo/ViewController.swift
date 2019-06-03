@@ -22,11 +22,11 @@ class ViewController: UIViewController {
         print("\(foundNode)")
         print("\(String(describing: foundNode.parentNode?.description))")
         
-        let binaryTree : BinaryTree = self.creatBinaryTree()
+        let binaryTree : BinarySearchTree = self.creatBinarySearchTree()
         print("\(binaryTree.description)")
         print("\(binaryTree.nodeCount)")
         
-        var emptyBinaryTree : BinaryTree<Int> = .empty
+        var emptyBinaryTree : BinarySearchTree<Int> = .empty
         print("\(emptyBinaryTree.description)")
         
          emptyBinaryTree.insert(newValue: 5)
@@ -38,29 +38,29 @@ class ViewController: UIViewController {
         
     }
     
-    private func creatBinaryTree() -> BinaryTree<String>{
+    private func creatBinarySearchTree() -> BinarySearchTree<String>{
         
         /*An interesting exercise to check out is to model a series of calculations using a binary tree. Take this for an example for modelling (5 * (a - 10)) + (-4 * (3 / b)) */
         
         // leaf nodes
-        let node5 = BinaryTree.node(.empty, "5", .empty)
-        let nodeA = BinaryTree.node(.empty, "a", .empty)
-        let node10 = BinaryTree.node(.empty, "10", .empty)
-        let node4 = BinaryTree.node(.empty, "4", .empty)
-        let node3 = BinaryTree.node(.empty, "3", .empty)
-        let nodeB = BinaryTree.node(.empty, "b", .empty)
+        let node5 = BinarySearchTree.node(.empty, "5", .empty)
+        let nodeA = BinarySearchTree.node(.empty, "a", .empty)
+        let node10 = BinarySearchTree.node(.empty, "10", .empty)
+        let node4 = BinarySearchTree.node(.empty, "4", .empty)
+        let node3 = BinarySearchTree.node(.empty, "3", .empty)
+        let nodeB = BinarySearchTree.node(.empty, "b", .empty)
         
         // intermediate nodes on the left
-        let Aminus10 = BinaryTree.node(nodeA, "-", node10)
-        let timesLeft = BinaryTree.node(node5, "*", Aminus10)
+        let Aminus10 = BinarySearchTree.node(nodeA, "-", node10)
+        let timesLeft = BinarySearchTree.node(node5, "*", Aminus10)
         
         // intermediate nodes on the right
-        let minus4 = BinaryTree.node(.empty, "-", node4)
-        let divide3andB = BinaryTree.node(node3, "/", nodeB)
-        let timesRight = BinaryTree.node(minus4, "*", divide3andB)
+        let minus4 = BinarySearchTree.node(.empty, "-", node4)
+        let divide3andB = BinarySearchTree.node(node3, "/", nodeB)
+        let timesRight = BinarySearchTree.node(minus4, "*", divide3andB)
         
         // root node
-        let tree = BinaryTree.node(timesLeft, "+", timesRight)
+        let tree = BinarySearchTree.node(timesLeft, "+", timesRight)
 
         return tree
     }
@@ -107,70 +107,6 @@ class ViewController: UIViewController {
         
         return rootNode
     }
-
-
-}
-
-class Node<T>{
-    
-    var value : T?
-    private var children : [Node] = [Node]()
-    internal  private(set) weak var parentNode : Node?
-    convenience init(data : T){
-        self.init()
-        self.value = data
-    }
-    private init(){
-        
-    }
-    
-    func addChild(child : Node){
-        self.children.append(child)
-        child.parentNode = self
-    }
-    
-    func getChildren() -> [Node]?{
-        
-        if self.children.count > 0{
-            return self.children
-        }else{
-            return nil
-        }
-        
-    }
     
 }
 
-extension Node : CustomStringConvertible{
-    
-    var description: String {
-        
-         var des : String = self.value as! String
-        if !self.children.isEmpty{
-            des += " { " + self.children.map{ $0.description }.joined(separator: ", ") + " } "
-        }
-        
-        return des
-    }
-    
-}
-
-extension Node where T : Equatable{
-    
-    func search(data : T) -> Node?{
-        
-        if self.value == data{
-            return self
-        }else{
-            
-            for (_ , child) in self.children.enumerated(){
-                
-                if let nodeFound : Node = child.search(data: data){
-                    return nodeFound
-                }
-            }
-        }
-        return nil
-    }
-    
-}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A310E7822A587C9006DD230 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A310E7722A587C9006DD230 /* Tree.swift */; };
 		2A68718122A4FDB6005915A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68718022A4FDB6005915A3 /* AppDelegate.swift */; };
 		2A68718322A4FDB6005915A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68718222A4FDB6005915A3 /* ViewController.swift */; };
 		2A68718622A4FDB6005915A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A68718422A4FDB6005915A3 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A310E7722A587C9006DD230 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		2A68717D22A4FDB6005915A3 /* DSAndAlgo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSAndAlgo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A68718022A4FDB6005915A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A68718222A4FDB6005915A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				2A68718022A4FDB6005915A3 /* AppDelegate.swift */,
 				2A68718222A4FDB6005915A3 /* ViewController.swift */,
 				2A68719222A527CC005915A3 /* BinaryTree.swift */,
+				2A310E7722A587C9006DD230 /* Tree.swift */,
 				2A68718422A4FDB6005915A3 /* Main.storyboard */,
 				2A68718722A4FDB7005915A3 /* Assets.xcassets */,
 				2A68718922A4FDB7005915A3 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A68718322A4FDB6005915A3 /* ViewController.swift in Sources */,
+				2A310E7822A587C9006DD230 /* Tree.swift in Sources */,
 				2A68718122A4FDB6005915A3 /* AppDelegate.swift in Sources */,
 				2A68719322A527CC005915A3 /* BinaryTree.swift in Sources */,
 			);

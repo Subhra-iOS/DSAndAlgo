@@ -21,12 +21,12 @@ import Foundation
 
 /*each left child is smaller than its parent node, and each right child is greater than its parent node. This is the key feature of a binary search tree.*/
 
-indirect enum BinaryTree<T : Comparable> {
+indirect enum BinarySearchTree<T : Comparable> {
     case empty
-    case node(BinaryTree, T, BinaryTree)
+    case node(BinarySearchTree, T, BinarySearchTree)
 }
 
-extension BinaryTree : CustomStringConvertible{
+extension BinarySearchTree : CustomStringConvertible{
     var description: String {
         
         switch self {
@@ -50,7 +50,7 @@ extension BinaryTree : CustomStringConvertible{
     mutating func insert(newValue: T) {
         self = insertValue(newValue: newValue)
     }
-   private func insertValue(newValue : T) -> BinaryTree {
+   private func insertValue(newValue : T) -> BinarySearchTree {
         switch self {
             case .empty:
                  return .node(.empty, newValue, .empty)
