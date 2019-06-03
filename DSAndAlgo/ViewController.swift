@@ -25,6 +25,17 @@ class ViewController: UIViewController {
         let binaryTree : BinaryTree = self.creatBinaryTree()
         print("\(binaryTree.description)")
         print("\(binaryTree.nodeCount)")
+        
+        var emptyBinaryTree : BinaryTree<Int> = .empty
+        print("\(emptyBinaryTree.description)")
+        
+         emptyBinaryTree.insert(newValue: 5)
+         emptyBinaryTree.insert(newValue: 7)
+         emptyBinaryTree.insert(newValue: 9)
+    
+        
+        print("\(emptyBinaryTree.description)")
+        
     }
     
     private func creatBinaryTree() -> BinaryTree<String>{
