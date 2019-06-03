@@ -13,6 +13,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let rootNode = self.createRootNode()
+        let treeDescription : String = rootNode.description
+        print("\(treeDescription)")
+    }
+    
+    private func createRootNode() -> Node<String>{
+        
+        let rootNode : Node<String> = Node(data: "Beverages")
+        let leftChild : Node<String> = Node(data: "Hot")
+        let rightChild : Node<String> = Node(data: "Cold")
+        rootNode.addChild(child: leftChild)
+        rootNode.addChild(child: rightChild)
+        
+        return rootNode
     }
 
 }
@@ -41,9 +56,9 @@ extension Node : CustomStringConvertible{
     
     var description: String {
         
-         var des : String = ""
+         var des : String = self.value as! String
         if !self.children.isEmpty{
-            
+            //text += " {" + children.map { $0.description }.joined(separator: ", ") + "} "
             des += "{" + self.children.map{ $0.description }.joined(separator: ", ") + "}"
         }
         
