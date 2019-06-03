@@ -58,7 +58,6 @@ extension Node : CustomStringConvertible{
         
          var des : String = self.value as! String
         if !self.children.isEmpty{
-            //text += " {" + children.map { $0.description }.joined(separator: ", ") + "} "
             des += "{" + self.children.map{ $0.description }.joined(separator: ", ") + "}"
         }
         
