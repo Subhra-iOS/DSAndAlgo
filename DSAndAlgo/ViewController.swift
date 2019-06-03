@@ -21,7 +21,39 @@ class ViewController: UIViewController {
         let foundNode : Node = rootNode.search(data: "Milk")!
         print("\(foundNode)")
         print("\(String(describing: foundNode.parentNode?.description))")
+        
+        let binaryTree : BinaryTree = self.creatBinaryTree()
+        print("\(binaryTree.description)")
+        print("\(binaryTree.nodeCount)")
     }
+    
+    private func creatBinaryTree() -> BinaryTree<String>{
+        
+        /*An interesting exercise to check out is to model a series of calculations using a binary tree. Take this for an example for modelling (5 * (a - 10)) + (-4 * (3 / b)) */
+        
+        // leaf nodes
+        let node5 = BinaryTree.node(.empty, "5", .empty)
+        let nodeA = BinaryTree.node(.empty, "a", .empty)
+        let node10 = BinaryTree.node(.empty, "10", .empty)
+        let node4 = BinaryTree.node(.empty, "4", .empty)
+        let node3 = BinaryTree.node(.empty, "3", .empty)
+        let nodeB = BinaryTree.node(.empty, "b", .empty)
+        
+        // intermediate nodes on the left
+        let Aminus10 = BinaryTree.node(nodeA, "-", node10)
+        let timesLeft = BinaryTree.node(node5, "*", Aminus10)
+        
+        // intermediate nodes on the right
+        let minus4 = BinaryTree.node(.empty, "-", node4)
+        let divide3andB = BinaryTree.node(node3, "/", nodeB)
+        let timesRight = BinaryTree.node(minus4, "*", divide3andB)
+        
+        // root node
+        let tree = BinaryTree.node(timesLeft, "+", timesRight)
+
+        return tree
+    }
+    
     
     private func createRootNode() -> Node<String>{
         

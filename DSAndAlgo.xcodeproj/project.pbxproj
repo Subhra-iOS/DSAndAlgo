@@ -12,6 +12,7 @@
 		2A68718622A4FDB6005915A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A68718422A4FDB6005915A3 /* Main.storyboard */; };
 		2A68718822A4FDB7005915A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A68718722A4FDB7005915A3 /* Assets.xcassets */; };
 		2A68718B22A4FDB7005915A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A68718922A4FDB7005915A3 /* LaunchScreen.storyboard */; };
+		2A68719322A527CC005915A3 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68719222A527CC005915A3 /* BinaryTree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		2A68718722A4FDB7005915A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A68718A22A4FDB7005915A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A68718C22A4FDB7005915A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A68719222A527CC005915A3 /* BinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				2A68718022A4FDB6005915A3 /* AppDelegate.swift */,
 				2A68718222A4FDB6005915A3 /* ViewController.swift */,
+				2A68719222A527CC005915A3 /* BinaryTree.swift */,
 				2A68718422A4FDB6005915A3 /* Main.storyboard */,
 				2A68718722A4FDB7005915A3 /* Assets.xcassets */,
 				2A68718922A4FDB7005915A3 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				2A68718322A4FDB6005915A3 /* ViewController.swift in Sources */,
 				2A68718122A4FDB6005915A3 /* AppDelegate.swift in Sources */,
+				2A68719322A527CC005915A3 /* BinaryTree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
