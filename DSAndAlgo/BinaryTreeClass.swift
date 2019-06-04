@@ -6,6 +6,10 @@
 //  Copyright © 2019 Subhra Roy. All rights reserved.
 //
 
+/*The time complexity is O(n), where n is the number of nodes in the tree.
+ This should be obvious, since the idea of traversing a tree is to go through all the nodes!
+*/
+
 import Foundation
 
 class TreeNode<T> {
