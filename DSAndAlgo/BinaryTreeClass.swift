@@ -129,3 +129,35 @@ extension BinaryTreeClass{
     }
     
 }
+
+extension BinaryTreeClass{
+    
+    func minimumNode() -> TreeNode<T>?{
+        
+        let node = self.rootNode
+        var minimumNode : TreeNode<T>?
+        while let left = node?.leftNode {
+            minimumNode = left
+        }
+        
+        return minimumNode
+    }
+    
+    func maximumNode() -> TreeNode<T>?{
+        
+        let node = self.rootNode
+        var maximumNode : TreeNode<T>?
+        while let right = node?.rightNode {
+            maximumNode = right
+        }
+        
+        return maximumNode
+    }
+    
+//    func deleteNodeWith(element : T) -> TreeNode<T>{
+//        
+//        
+//        
+//    }
+    
+}
