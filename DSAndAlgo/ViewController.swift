@@ -36,6 +36,43 @@ class ViewController: UIViewController {
         
         print("\(emptyBinaryTree.description)")
         
+        var tree: BinarySearchTree<Int> = .empty
+        tree.insert(newValue: 7)
+        tree.insert(newValue: 10)
+        tree.insert(newValue: 2)
+        tree.insert(newValue: 1)
+        tree.insert(newValue: 5)
+        tree.insert(newValue: 9)
+        
+        tree.traverseInOrder { print($0.description) }
+        // tree.traversePreOrder { print($0.description) }
+        // tree.traversePostOrder { print($0.description) }
+
+        let foundSearchNode = tree.searchInBinaryTree(searchValue: 9)
+        print("\(String(describing: foundSearchNode))")
+        
+        
+        let treeClass = BinaryTreeClass<String>()
+        
+        treeClass.insert(element: "F")
+        treeClass.insert(element: "G")
+        treeClass.insert(element: "H")
+        treeClass.insert(element: "D")
+        treeClass.insert(element: "E")
+        treeClass.insert(element: "I")
+        treeClass.insert(element: "J")
+        treeClass.insert(element: "A")
+        treeClass.insert(element: "B")
+        treeClass.insert(element: "C")
+        
+        treeClass.traverseTree()
+        
+       let eNode =  treeClass.search(element: "E")
+       let nNode =  treeClass.search(element: "N")
+        
+        print("\(String(describing: eNode?.data))")
+        print("\(String(describing: nNode?.data))")
+        
     }
     
     private func creatBinarySearchTree() -> BinarySearchTree<String>{

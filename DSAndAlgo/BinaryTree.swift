@@ -64,5 +64,66 @@ extension BinarySearchTree : CustomStringConvertible{
         
     }
     
+    func traverseInOrder(process : @escaping (T) -> Void) -> Void{
+        
+        switch self {
+            case .empty:
+                return
+            case .node(let left, let value, let right) :
+                    left.traverseInOrder(process: process)
+                    process(value)
+                    right.traverseInOrder(process: process)
+        }
+        
+    }
+    
+    func traversePreOrder(process : @escaping (T) -> Void) -> Void{
+        
+        switch self {
+        case .empty:
+            return
+        case .node(let left, let value, let right) :
+            process(value)
+            left.traverseInOrder(process: process)
+            right.traverseInOrder(process: process)
+        }
+        
+    }
+    
+    func traversePostOrder(process : @escaping (T) -> Void) -> Void{
+        
+        switch self {
+        case .empty:
+            return
+        case .node(let left, let value, let right) :
+            left.traverseInOrder(process: process)
+            right.traverseInOrder(process: process)
+            process(value)
+        }
+        
+    }
+    
 }
 
+extension BinarySearchTree where T : Comparable {
+    
+    func searchInBinaryTree(searchValue : T) -> BinarySearchTree?{
+        
+        switch self {
+            case .empty:
+                return nil
+            case .node(let left, let value, let right) :
+                if  searchValue == value{
+                    return self
+                }
+                
+                if searchValue < value{
+                    return  left.searchInBinaryTree(searchValue: searchValue)
+                }else{
+                    return  right.searchInBinaryTree(searchValue: searchValue)
+                }
+            
+        }
+    }
+    
+}
