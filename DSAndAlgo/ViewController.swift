@@ -73,6 +73,7 @@ class ViewController: UIViewController {
         print("\(String(describing: eNode?.data))")
         print("\(String(describing: nNode?.data))")
         
+        printBinaryDigitWith(string: "1??0?101", index: 0)
     }
     
     private func creatBinarySearchTree() -> BinarySearchTree<String>{
@@ -147,3 +148,42 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController{
+    /*Given a string containing of ‘0’, ‘1’ and ‘?’ wildcard characters, generate all binary strings that can be formed by replacing each wildcard character by ‘0’ or ‘1’.*/
+    
+    func printBinaryDigitWith(string : String, index : Int) -> Void{
+        
+        let mutableStr : String = string
+        
+        if index == mutableStr.count  {
+            print("\(mutableStr)")
+            return
+        }else{
+            guard let index0 : String.Index = string.firstIndex(of: "?") else {
+                
+                return
+            }
+            // let position : String.IndexDistance = mutableStr.distance(from: mutableStr.startIndex, to: idx)
+            let newStr0 : String = mutableStr.replaceCharacterAt(index: index0.encodedOffset, with: String.Element("0"))
+            print("\(newStr0)")
+            guard let index1 : String.Index = newStr0.firstIndex(of: "?") else {
+                
+                return
+            }
+            let newStr1 : String = newStr0.replaceCharacterAt(index: index1.encodedOffset, with: String.Element("1"))
+            print("\(newStr1)")
+            printBinaryDigitWith(string: newStr1, index: (index1.encodedOffset + 1))
+        }
+        
+    }
+}
+
+extension String{
+    func replaceCharacterAt(index : Int, with character : String.Element) -> String{
+        
+        var characters : [String.Element] =  Array(self)
+        characters[index] = character
+        let newString : String = String(characters)
+        return newString
+    }
+}
